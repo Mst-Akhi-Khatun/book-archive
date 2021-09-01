@@ -4,6 +4,7 @@ const errorDiv = document.getElementById("error");
 const loadBook = () => {
     const searchInput = document.getElementById("search-input");
     const searchText = searchInput.value;
+    
     fetch(`http://openlibrary.org/search.json?q=${searchText}`)
     .then(res => res.json())
     .then(data => displayBook(data.docs))
@@ -11,29 +12,29 @@ const loadBook = () => {
 // loadBook();
 
 const displayBook = (books) => {
+    
     // Error Handing
-  if (books.status === 404) {
+  /* if (books.status === 404) {
     errorDiv.innerText = "NO Result Found";
   } else {
     errorDiv.innerText = "";
-  }
+  } */
     // console.log(books);
     books.forEach(book => {
-        // console.log(book.subject[0]);
-        // displaySection.classList.add('row');
+        const {title, first_publish_year, author_name, publisher} = book;
+        console.log(title)               
+        const imageId = book.cover_i;
+        const imageUrl = `https://covers.openlibrary.org/b/id/${imageId}-M.jpg`
         const div = document.createElement('div');
-        div.classList.add('col-3');
+        div.classList.add('col');
         div.innerHTML = `
-        <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Book Name:</h5>          
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Author Name: ${book.author_name[0]}</li>
-          <li class="list-group-item">Publisher: ${book.publisher[0]}</li>
-          <li class="list-group-item">Book First Publish Date: ${book.first_publish_year}</li>
-        </ul>
+        <div class="card h-100">
+                    <img src="${imageUrl}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4>${title}</h4>
+                        <p>${first_publish_year}</p>
+                    </div>
+        
         
       </div></br>
         `
@@ -41,8 +42,4 @@ const displayBook = (books) => {
     })
 }
 
-/* 
-<h1>Author Name: ${book.author_name[0]}</h1>
-            <h2>Publisher: ${book.publisher[0]}</h2>
-            <h5>Book First Publish Date: ${book.first_publish_year}</h5>
-*/
+

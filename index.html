@@ -8,8 +8,8 @@
     <!-- Bootstrap css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
-<body>
-    <main  class="bg-success p-2 text-white bg-opacity-75" style="height: 2000px;">
+<body  class="bg-success p-2 bg-opacity-75">
+    <main>
 
         <h1 class="text-center fw-bold pt-4">book-archive</h1>
         <div class="input-group mb-3 w-50 mx-auto">
@@ -17,8 +17,11 @@
             <button onclick="loadBook()" class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
         </div>
         <div id="error"></div>
-        <section id="display-section" class="container-fluid row">
-            
+        <section class="container-fluid">
+            <div id="display-section" class="row row-cols-1 row-cols-md-4 g-4">                
+               
+                
+              </div>
         </section>
     </main>
     

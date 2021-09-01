@@ -5,10 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book-Archive</title>
+    <!-- Bootstrap css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
-    <h1>book-archive</h1>
+    <main  class="bg-success p-2 text-white bg-opacity-75" style="height: 2000px;">
 
+        <h1 class="text-center fw-bold pt-4">book-archive</h1>
+        <div class="input-group mb-3 w-50 mx-auto">
+            <input id="search-input" type="text" class="form-control" placeholder="Please Enter Your Book Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button onclick="loadBook()" class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
+        </div>
+        <div id="error"></div>
+        <section id="display-section" class="container-fluid row">
+            
+        </section>
+    </main>
+    
+
+    <!-- javascript link -->
     <script src="js/main.js"></script>
 </body>
 </html>

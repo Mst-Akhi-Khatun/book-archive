@@ -7,34 +7,38 @@
     <title>Book-Archive</title>
     <!-- Bootstrap css link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- css style -->
+    <style>
+        #spinner{
+            display: none;
+        }
+    </style>
 </head>
 <body class="bg-success p-2">
-
     <header>
         <h1 class="text-center text-white text-uppercase fw-bold pt-4">WELCOME TO our book archive</h1>
         <!-- input section starts -->
         <div class="input-group mb-3 w-50 mx-auto">
-            <input id="search-input" type="text" class="form-control" placeholder="Please Enter Your Book Name" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button onclick="loadBook()" class="btn btn-outline-light ms-1" type="button" id="button-addon2">Search</button>
+            <input id="search-input" type="text" class="form-control" placeholder="Please Enter Your Book Name">
+            <button onclick="loadBook()" class="btn btn-outline-light ms-1" type="button">Search</button>
         </div>
     </header>
      <!-- main section starts -->
     <main>        
-        <div class="text-center">
-            <div id="spinner" class="spinner-border d-none" role="status">
-              <span class="visually-hidden">Loading...</span>
+        <div class="d-flex justify-content-center">
+            <div id="spinner" class="spinner-border" role="status">
+              
             </div>
         </div>
         <!-- error section -->
-        <div id="error" class="text-center text-danger fw-bold fs-1 fst-italic"></div>
-        <!-- book display section -->
+        <div id="error"></div>        
         <!-- total results -->
         <div id="result" class="text-light text-center fw-bold fs-3 my-5"></div>
+        <!-- book display section -->
         <section class="container-fluid mt-5">            
             <div id="display-section" class="row row-cols-1 row-cols-md-4 g-4"></div>              
         </section>
-    </main>
-    
+    </main>    
 
     <!-- javascript file link -->
     <script src="js/main.js"></script>

@@ -10,18 +10,22 @@
 </head>
 <body  class="bg-success p-2 bg-opacity-75">
     <main>
-
-        <h1 class="text-center fw-bold pt-4">book-archive</h1>
+        <!-- input section -->
+        <h1 class="text-center text-white fw-bold pt-4">book-archive</h1>
         <div class="input-group mb-3 w-50 mx-auto">
             <input id="search-input" type="text" class="form-control" placeholder="Please Enter Your Book Name" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button onclick="loadBook()" class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
         </div>
+
+        <!-- error section -->
         <div id="error"></div>
+
+        <!-- book display section -->
         <section class="container-fluid">
+            <div id="result" class="text-center"></div>
             <div id="display-section" class="row row-cols-1 row-cols-md-4 g-4">                
                
-                
-              </div>
+            </div>
         </section>
     </main>
     
